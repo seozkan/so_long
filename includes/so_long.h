@@ -38,6 +38,7 @@ typedef struct s_game
 	int p_count;
 	int rows;
 	int columns;
+	int exit_flag;
 } t_game;
 
 void ft_validate_characters(t_game *game);
@@ -49,5 +50,9 @@ void ft_error_message(char *str, int error);
 void init_data(t_game *game);
 void ft_validate_file(char *map_path);
 void read_map(char *map_path,t_game *game);
+
+void	ft_floodfill(t_game *game, int x, int y, int *count_c);
+void	ft_restore(t_game *game);
+void	ft_validate_path(t_game *game);
 
 #endif
