@@ -13,7 +13,7 @@
 NAME = so_long
 CC = @gcc
 RM = @rm -f
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror -g3
 
 YELLOW = \033[33;49;1m
 END = \033[0;0m
@@ -35,7 +35,8 @@ SRC = 	src/so_long.c				\
 		src/check.c					\
 		src/path.c					\
 		src/window.c				\
-		src/fill.c
+		src/fill.c					\
+		src/hook.c
 
 OBJ = ${SRC:.c=.o}
 

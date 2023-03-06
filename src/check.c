@@ -1,21 +1,21 @@
-/* ************************************************************************************** */
-/*                                                                                        */
-/*                                                                   :::      ::::::::    */
-/*   check.c                                                       :+:      :+:    :+:    */
-/*                                                               +:+ +:+         +:+      */
-/*   By: seozkan <seozkan@student.42kocaeli.com.tr>            +#+  +:+       +#+         */
-/*                                                           +#+#+#+#+#+   +#+            */
-/*   Created: 0003/02/28 17:11:59 by zkan                         #+#    #+#              */
-/*   Updated: 2023/03/05 23:18:53 by seozkan                     ###   ########.tr        */
-/*                                                                                        */
-/* ************************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/06 22:49:24 by seozkan           #+#    #+#             */
+/*   Updated: 2023/03/06 23:22:41 by seozkan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void ft_validate_characters(t_game *game)
+void	ft_validate_characters(t_game *game)
 {
-	size_t x;
-	size_t y;
+	size_t	x;
+	size_t	y;
 
 	y = 0;
 	while (game->map[y])
@@ -23,7 +23,9 @@ void ft_validate_characters(t_game *game)
 		x = 0;
 		while (game->map[y][x])
 		{
-			if (game->map[y][x] != '0' && game->map[y][x] != '1' && game->map[y][x] != 'E' && game->map[y][x] != 'P' && game->map[y][x] != 'C')
+			if (game->map[y][x] != '0' && game->map[y][x] != '1'
+				&& game->map[y][x] != 'E' && game->map[y][x] != 'P'
+				&& game->map[y][x] != 'C')
 				ft_error_message(E_CHARACTER, 1);
 			x++;
 		}
@@ -31,10 +33,10 @@ void ft_validate_characters(t_game *game)
 	}
 }
 
-void ft_amount_of_characters(t_game *game)
+void	ft_amount_of_characters(t_game *game)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (game->map[y])
@@ -49,8 +51,8 @@ void ft_amount_of_characters(t_game *game)
 			if (game->map[y][x] == 'P')
 			{
 				game->p_count++;
-				game->pl_x = y;
-				game->pl_y = x;
+				game->x = x;
+				game->y = y;
 			}
 			x++;
 		}
@@ -60,10 +62,10 @@ void ft_amount_of_characters(t_game *game)
 		ft_error_message(E_CHARS, 1);
 }
 
-void ft_validate_wall(t_game *game)
+void	ft_validate_wall(t_game *game)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (game->map[y])
@@ -83,10 +85,10 @@ void ft_validate_wall(t_game *game)
 	}
 }
 
-void ft_validate_line_length(t_game *game)
+void	ft_validate_line_length(t_game *game)
 {
-	int i;
-	int y;
+	int	i;
+	int	y;
 
 	i = ft_strlen(game->map[0]);
 	y = 1;
@@ -100,7 +102,7 @@ void ft_validate_line_length(t_game *game)
 	game->columns = i;
 }
 
-void check_map(t_game *game, char **av)
+void	check_map(t_game *game, char **av)
 {
 	read_map(av[1], game);
 	ft_validate_line_length(game);

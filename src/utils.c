@@ -1,14 +1,14 @@
-/* ************************************************************************************** */
-/*                                                                                        */
-/*                                                                   :::      ::::::::    */
-/*   utils.c                                                       :+:      :+:    :+:    */
-/*                                                               +:+ +:+         +:+      */
-/*   By: seozkan <seozkan@student.42kocaeli.com.tr>            +#+  +:+       +#+         */
-/*                                                           +#+#+#+#+#+   +#+            */
-/*   Created: 0003/02/28 16:48:59 by zkan                         #+#    #+#              */
-/*   Updated: 2023/03/05 23:17:08 by seozkan                     ###   ########.tr        */
-/*                                                                                        */
-/* ************************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/06 23:17:27 by seozkan           #+#    #+#             */
+/*   Updated: 2023/03/06 23:18:31 by seozkan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
@@ -30,7 +30,7 @@ void	ft_validate_file(char *map_path)
 		ft_error_message(E_FORMAT, 1);
 }
 
-void	read_map(char *map_path,t_game *game)
+void	read_map(char *map_path, t_game *game)
 {
 	char	*str_map;
 	int		fd;
@@ -54,5 +54,5 @@ void	read_map(char *map_path,t_game *game)
 	read(fd, str_map, count);
 	str_map[count] = '\0';
 	close(fd);
-	game->map = ft_split(str_map,'\n');
+	game->map = ft_split(str_map, '\n');
 }
