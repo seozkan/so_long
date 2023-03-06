@@ -14,43 +14,47 @@
 
 void ft_validate_characters(t_game *game)
 {
-	size_t y;
 	size_t x;
+	size_t y;
 
-	x = 0;
-	while (game->map[x])
+	y = 0;
+	while (game->map[y])
 	{
-		y = 0;
-		while (game->map[x][y])
+		x = 0;
+		while (game->map[y][x])
 		{
-			if (game->map[x][y] != '0' && game->map[x][y] != '1' && game->map[x][y] != 'E' && game->map[x][y] != 'P' && game->map[x][y] != 'C')
+			if (game->map[y][x] != '0' && game->map[y][x] != '1' && game->map[y][x] != 'E' && game->map[y][x] != 'P' && game->map[y][x] != 'C')
 				ft_error_message(E_CHARACTER, 1);
-			y++;
+			x++;
 		}
-		x++;
+		y++;
 	}
 }
 
 void ft_amount_of_characters(t_game *game)
 {
-	int y;
 	int x;
+	int y;
 
-	x = 0;
-	while (game->map[x])
+	y = 0;
+	while (game->map[y])
 	{
-		y = 0;
-		while (game->map[x][y])
+		x = 0;
+		while (game->map[y][x])
 		{
-			if (game->map[x][y] == 'C')
+			if (game->map[y][x] == 'C')
 				game->c_count++;
-			if (game->map[x][y] == 'E')
+			if (game->map[y][x] == 'E')
 				game->e_count++;
-			if (game->map[x][y] == 'P')
+			if (game->map[y][x] == 'P')
+			{
 				game->p_count++;
-			y++;
+				game->pl_x = y;
+				game->pl_y = x;
+			}
+			x++;
 		}
-		x++;
+		y++;
 	}
 	if (game->p_count != 1 || game->e_count != 1 || game->c_count < 1)
 		ft_error_message(E_CHARS, 1);
@@ -58,41 +62,41 @@ void ft_amount_of_characters(t_game *game)
 
 void ft_validate_wall(t_game *game)
 {
-	int y;
 	int x;
+	int y;
 
-	x = 0;
-	while (game->map[x])
+	y = 0;
+	while (game->map[y])
 	{
-		y = 0;
-		while (game->map[x][y])
+		x = 0;
+		while (game->map[y][x])
 		{
-			if (x == 0 && game->map[x][y] != '1')
+			if (y == 0 && game->map[y][x] != '1')
 				ft_error_message(E_WALLS, 1);
-			if (x == game->rows - 1 && game->map[x][y] != '1')
+			if (y == game->rows - 1 && game->map[y][x] != '1')
 				ft_error_message(E_WALLS, 1);
-			if ((y == 0 || y == (game->columns - 1)) && game->map[x][y] != '1')
+			if ((x == 0 || x == (game->columns - 1)) && game->map[y][x] != '1')
 				ft_error_message(E_WALLS, 1);
-			y++;
+			x++;
 		}
-		x++;
+		y++;
 	}
 }
 
 void ft_validate_line_length(t_game *game)
 {
 	int i;
-	int x;
+	int y;
 
 	i = ft_strlen(game->map[0]);
-	x = 1;
-	while (game->map[x])
+	y = 1;
+	while (game->map[y])
 	{
-		if (i != (int)ft_strlen(game->map[x]))
+		if (i != (int)ft_strlen(game->map[y]))
 			ft_error_message(E_INVALIDMAP, 1);
-		x++;
+		y++;
 	}
-	game->rows = x;
+	game->rows = y;
 	game->columns = i;
 }
 

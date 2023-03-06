@@ -15,6 +15,7 @@
 
 #include "../lib/ft_printf/ft_printf.h"
 #include "../lib/libft/libft.h"
+#include "../lib/mlx/mlx.h"
 #include <fcntl.h>
 
 #define E_MALLOC "Error with malloc."
@@ -33,12 +34,17 @@
 typedef struct s_game
 {
 	char **map;
+	char *file;
 	int c_count;
 	int e_count;
 	int p_count;
 	int rows;
 	int columns;
-	int exit_flag;
+	void *mlx;
+	void *mlx_win;
+	int pl_x;
+	int pl_y;
+	int pxl;
 } t_game;
 
 void ft_validate_characters(t_game *game);
@@ -49,10 +55,16 @@ void check_map(t_game *game, char **av);
 void ft_error_message(char *str, int error);
 void init_data(t_game *game);
 void ft_validate_file(char *map_path);
-void read_map(char *map_path,t_game *game);
+void read_map(char *map_path, t_game *game);
 
-void	ft_floodfill(t_game *game, int x, int y, int *count_c);
-void	ft_restore(t_game *game);
-void	ft_validate_path(t_game *game);
+void ft_floodfill(t_game *game, int x, int y, int *count_c);
+void ft_restore(t_game *game);
+void ft_validate_path(t_game *game);
+void ft_fill_window(t_game *game);
 
+void	ft_put_limits(t_game *game,int x,int y);
+void	ft_put_floor(t_game *game,int x,int y);
+void	ft_put_collect(t_game *game,int x,int y);
+void	ft_put_player(t_game *game);
+void	ft_put_exit(t_game *game,int x,int y);
 #endif

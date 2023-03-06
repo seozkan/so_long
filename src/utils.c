@@ -14,19 +14,19 @@
 
 void	ft_validate_file(char *map_path)
 {
-	int	end;
+	int	i;
 
-	end = ft_strlen(map_path) - 1;
-	if (map_path[end] != 'r')
+	i = ft_strlen(map_path) - 1;
+	if (map_path[i] != 'r')
 		ft_error_message(E_FORMAT, 1);
-	end--;
-	if (map_path[end] != 'e')
+	i--;
+	if (map_path[i] != 'e')
 		ft_error_message(E_FORMAT, 1);
-	end--;
-	if (map_path[end] != 'b')
+	i--;
+	if (map_path[i] != 'b')
 		ft_error_message(E_FORMAT, 1);
-	end--;
-	if (map_path[end] != '.')
+	i--;
+	if (map_path[i] != '.')
 		ft_error_message(E_FORMAT, 1);
 }
 

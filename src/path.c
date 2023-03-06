@@ -19,8 +19,6 @@ void	ft_floodfill(t_game *game, int x, int y, int *count_c)
 		|| game->map[y][x] == 'o' || game->map[y][x] == 'e'
 		|| game->map[y][x] == 'E')
 	{
-		if (game->map[y][x] == 'E')
-			game->exit_flag = 1;
 		return ;
 	}
 	if (game->map[y][x] == 'C')
@@ -82,8 +80,6 @@ void	ft_validate_path(t_game *game)
 				if (count_c != 0)
 					ft_error_message(E_PATH, 1);
 				ft_restore(game);
-				if (game->exit_flag == 0)
-					ft_error_message(E_PATH, 1);
 				return ;
 			}
 			x++;

@@ -19,15 +19,30 @@ void init_data(t_game *game)
 	game->p_count = 0;
 }
 
-int	main(int ac, char **av)
+void	ft_window(t_game *game)
 {
-	t_game	*game;
+	game->pxl = 50;
+	game->mlx = mlx_init();
+	game->mlx_win = mlx_new_window(game->mlx,
+			game->pxl * game->columns,
+			game->pxl * game->rows, "42 SoLong by seozkan");
+	if (!game->mlx)
+		exit(EXIT_FAILURE);
+	ft_fill_window(game);
+}
+
+int main(int ac, char **av)
+{
+	t_game *game;
 
 	game = (t_game *)malloc(sizeof(t_game));
 	if (!game)
 		return (0);
 	if (ac != 2)
-		ft_error_message(E_ARG,1);
+		ft_error_message(E_ARG, 1);
 	check_map(game, av);
+	init_data(game);
+	ft_window(game);
+	mlx_loop(game->mlx);
 	return (0);
 }
