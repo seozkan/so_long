@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:13:49 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 21:30:05 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 21:35:12 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,6 @@ void		ft_free_map_2d(char **map);
 
 void		ft_window(t_game *game);
 int			ft_close_window(t_game *game);
-int			ft_fill_window(t_game *game);
+int			ft_draw_map(t_game *game);
 void		init_assets(t_game *game);
 #endif

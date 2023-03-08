@@ -34,8 +34,8 @@ SRC = 	src/so_long.c				\
 		src/check.c					\
 		src/path.c					\
 		src/window.c				\
-		src/fill.c					\
-		src/hook.c
+		src/put.c					\
+		src/key.c
 
 OBJ = ${SRC:.c=.o}
 
