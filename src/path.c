@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:08:58 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/06 23:12:37 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 16:54:56 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	ft_floodfill(t_game *game, int x, int y)
 		|| game->map[y][x] == '1' || game->map[y][x] == 'c'
 		|| game->map[y][x] == 'o' || game->map[y][x] == 'e'
 		|| game->map[y][x] == 'E')
-	{
 		return ;
-	}
 	if (game->map[y][x] == 'C')
 	{
 		game->c_count--;
@@ -75,7 +73,7 @@ void	ft_validate_path(t_game *game)
 			{
 				ft_floodfill(game, x, y);
 				if (game->c_count != 0)
-					ft_error_message(E_PATH, 1);
+					ft_error_message(E_PATH, game);
 				ft_restore(game);
 				return ;
 			}

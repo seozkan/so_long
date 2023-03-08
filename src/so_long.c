@@ -6,11 +6,39 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:13:35 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/06 23:27:29 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 17:02:37 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void	close_img(t_game *game)
+{
+	if (game->floor)
+		mlx_destroy_image(game->mlx, game->floor);
+	if (game->limits)
+		mlx_destroy_image(game->mlx, game->limits);
+	if (game->collect)
+		mlx_destroy_image(game->mlx, game->collect);
+	if (game->player)
+		mlx_destroy_image(game->mlx, game->player);
+	if (game->exit)
+		mlx_destroy_image(game->mlx, game->exit);
+}
+
+void	init_data(t_game *game)
+{
+	game->p_count = 0;
+	game->c_count = 0;
+	game->e_count = 0;
+	game->mov = 0;
+	game->floor = NULL;
+	game->limits = NULL;
+	game->player = NULL;
+	game->collect = NULL;
+	game->exit = NULL;
+	game->map = NULL;
+}
 
 int	main(int ac, char **av)
 {
@@ -19,12 +47,11 @@ int	main(int ac, char **av)
 	game = (t_game *)malloc(sizeof(t_game));
 	if (!game)
 		return (0);
+	init_data(game);
 	if (ac != 2)
-		ft_error_message(E_ARG, 1);
-	check_map(game, av);
+		ft_error_message(E_ARG, game);
+	read_map(av[1], game);
+	check_map(game);
 	ft_window(game);
-	mlx_hook(game->mlx_win, 2, 1L << 0, ft_keyboard, game);
-	mlx_hook(game->mlx_win, 17, 1L << 5, ft_close_window, game);
-	mlx_loop(game->mlx);
 	return (0);
 }

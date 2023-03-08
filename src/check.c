@@ -6,13 +6,13 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:49:24 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/06 23:22:41 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 17:01:48 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	ft_validate_characters(t_game *game)
+void	ft_validate_chars(t_game *game)
 {
 	size_t	x;
 	size_t	y;
@@ -26,14 +26,14 @@ void	ft_validate_characters(t_game *game)
 			if (game->map[y][x] != '0' && game->map[y][x] != '1'
 				&& game->map[y][x] != 'E' && game->map[y][x] != 'P'
 				&& game->map[y][x] != 'C')
-				ft_error_message(E_CHARACTER, 1);
+				ft_error_message(E_CHARACTER, game);
 			x++;
 		}
 		y++;
 	}
 }
 
-void	ft_amount_of_characters(t_game *game)
+void	ft_validate_amount_chars(t_game *game)
 {
 	int	x;
 	int	y;
@@ -59,7 +59,7 @@ void	ft_amount_of_characters(t_game *game)
 		y++;
 	}
 	if (game->p_count != 1 || game->e_count != 1 || game->c_count < 1)
-		ft_error_message(E_CHARS, 1);
+		ft_error_message(E_CHARS, game);
 }
 
 void	ft_validate_wall(t_game *game)
@@ -74,18 +74,18 @@ void	ft_validate_wall(t_game *game)
 		while (game->map[y][x])
 		{
 			if (y == 0 && game->map[y][x] != '1')
-				ft_error_message(E_WALLS, 1);
+				(ft_error_message(E_WALLS, game));
 			if (y == game->rows - 1 && game->map[y][x] != '1')
-				ft_error_message(E_WALLS, 1);
+				ft_error_message(E_WALLS, game);
 			if ((x == 0 || x == (game->columns - 1)) && game->map[y][x] != '1')
-				ft_error_message(E_WALLS, 1);
+				ft_error_message(E_WALLS, game);
 			x++;
 		}
 		y++;
 	}
 }
 
-void	ft_validate_line_length(t_game *game)
+void	ft_validate_rectangle(t_game *game)
 {
 	int	i;
 	int	y;
@@ -95,19 +95,18 @@ void	ft_validate_line_length(t_game *game)
 	while (game->map[y])
 	{
 		if (i != (int)ft_strlen(game->map[y]))
-			ft_error_message(E_INVALIDMAP, 1);
+			ft_error_message(E_INVALIDMAP, game);
 		y++;
 	}
 	game->rows = y;
 	game->columns = i;
 }
 
-void	check_map(t_game *game, char **av)
+void	check_map(t_game *game)
 {
-	read_map(av[1], game);
-	ft_validate_line_length(game);
-	ft_validate_characters(game);
-	ft_amount_of_characters(game);
+	ft_validate_chars(game);
+	ft_validate_amount_chars(game);
 	ft_validate_wall(game);
+	ft_validate_rectangle(game);
 	ft_validate_path(game);
 }

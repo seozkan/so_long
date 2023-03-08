@@ -30,7 +30,6 @@ MLX_ARG = -lm -lX11 -lXext
 
 
 SRC = 	src/so_long.c				\
-		src/error.c					\
 		src/utils.c					\
 		src/check.c					\
 		src/path.c					\
@@ -60,7 +59,7 @@ $(MLX):
 	@make -s -C $(MLX_DIR)
 
 n:
-	norminette
+	norminette *c
 
 v:
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./${NAME} maps/1.ber
