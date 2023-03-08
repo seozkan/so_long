@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:13:35 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 17:43:27 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 21:30:27 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ void	init_data(t_game *game)
 	game->y = 0;
 	game->rows = 0;
 	game->columns = 0;
-	game->floor = NULL;
-	game->limits = NULL;
-	game->player = NULL;
-	game->collect = NULL;
-	game->exit = NULL;
 }
 
 int	main(int ac, char **av)

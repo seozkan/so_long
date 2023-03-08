@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:17:27 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 17:03:05 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 21:31:04 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,18 @@ void	ft_free_map_2d(char **map)
 	}
 	free(map);
 	map = NULL;
+}
+
+void	init_assets(t_game *game)
+{
+	game->floor = mlx_xpm_file_to_image(game->mlx,
+			"./assets/floor.xpm", &game->pxl, &game->pxl);
+	game->limits = mlx_xpm_file_to_image(game->mlx,
+			"./assets/tree.xpm", &game->pxl, &game->pxl);
+	game->player = mlx_xpm_file_to_image(game->mlx,
+			"./assets/player.xpm", &game->pxl, &game->pxl);
+	game->collect = mlx_xpm_file_to_image(game->mlx,
+			"./assets/pokeball.xpm", &game->pxl, &game->pxl);
+	game->exit = mlx_xpm_file_to_image(game->mlx,
+			"./assets/close.xpm", &game->pxl, &game->pxl);
 }
