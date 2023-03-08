@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:13:49 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 16:50:07 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 17:41:51 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,11 @@ typedef struct s_game
 
 }			t_game;
 
+void		check_map(t_game *game);
 void		ft_validate_chars(t_game *game);
 void		ft_validate_amount_chars(t_game *game);
-void		ft_validate_line_length(t_game *game);
-void		check_map(t_game *game);
-
-void		ft_error_message(char *str, t_game *game);
-void		ft_validate_file(char *map_path, t_game *game);
-void		read_map(char *map_path, t_game *game);
-
-void		ft_floodfill(t_game *game, int x, int y);
-void		ft_restore(t_game *game);
-void		ft_validate_path(t_game *game);
-void		ft_fill_window(t_game *game);
+void		ft_validate_wall(t_game *game);
+void		ft_validate_rectangle(t_game *game);
 
 void		ft_put_limits(t_game *game, int x, int y);
 void		ft_put_floor(t_game *game, int x, int y);
@@ -87,10 +79,21 @@ void		ft_move_up(t_game *game);
 void		ft_move_down(t_game *game);
 void		ft_move_left(t_game *game);
 void		ft_move_right(t_game *game);
-
 int			ft_keyboard(int keyhook, t_game *game);
-int			ft_close_window(t_game *game);
-void		ft_window(t_game *game);
-void		ft_free_map_2d(char **map_2d);
+
+void		ft_floodfill(t_game *game, int x, int y);
+void		ft_restore(t_game *game);
+void		ft_validate_path(t_game *game);
+
 void		close_img(t_game *game);
+void		init_data(t_game *game);
+
+void		ft_validate_file(char *map_path, t_game *game);
+void		read_map(char *map_path, t_game *game);
+void		ft_error_message(char *str, t_game *game);
+void		ft_free_map_2d(char **map);
+
+void		ft_window(t_game *game);
+int			ft_close_window(t_game *game);
+void		ft_fill_window(t_game *game);
 #endif
