@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:13:35 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 17:02:37 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 17:05:46 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ void	close_img(t_game *game)
 
 void	init_data(t_game *game)
 {
-	game->p_count = 0;
+	game->map = NULL;
 	game->c_count = 0;
 	game->e_count = 0;
+	game->p_count = 0;
 	game->mov = 0;
 	game->floor = NULL;
 	game->limits = NULL;
 	game->player = NULL;
 	game->collect = NULL;
 	game->exit = NULL;
-	game->map = NULL;
 }
 
 int	main(int ac, char **av)
