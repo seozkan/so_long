@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:13:35 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 22:26:09 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 22:35:36 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 void	close_img(t_game *game)
 {
@@ -24,6 +24,8 @@ void	close_img(t_game *game)
 		mlx_destroy_image(game->mlx, game->player);
 	if (game->exit)
 		mlx_destroy_image(game->mlx, game->exit);
+	if (game->enemy)
+		mlx_destroy_image(game->mlx, game->enemy);
 }
 
 void	init_data(t_game *game)

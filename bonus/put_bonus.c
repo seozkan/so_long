@@ -6,11 +6,11 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:50:50 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 22:02:46 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 22:03:41 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 void	ft_put_limits(t_game *game, int x, int y)
 {

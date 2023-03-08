@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   window_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:18:37 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 22:02:07 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 22:13:53 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 void	ft_window(t_game *game)
 {
@@ -60,6 +60,8 @@ int	ft_draw_map(t_game *game)
 				ft_put_player(game);
 			if (game->map[y][x] == 'E')
 				ft_put_exit(game, x, y);
+			if (game->map[y][x] == 'X')
+				ft_put_enemy(game, x, y);
 			x++;
 		}
 		y++;

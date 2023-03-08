@@ -11,6 +11,7 @@
 # **************************************************************************** #
 
 NAME = so_long
+NAME_B = so_long_b
 CC = @gcc
 RM = @rm -f
 FLAGS = -Wall -Wextra -Werror -g3
@@ -37,20 +38,29 @@ SRC = 	src/so_long.c				\
 		src/put.c					\
 		src/key.c
 
+B_SRC = bonus/so_long_bonus.c		\
+		bonus/utils_bonus.c			\
+		bonus/check_bonus.c			\
+		bonus/path_bonus.c			\
+		bonus/window_bonus.c		\
+		bonus/put_bonus.c			\
+		bonus/put_two_bonus.c		\
+		bonus/key_bonus.c
+
 OBJ = ${SRC:.c=.o}
+B_OBJ = ${B_SRC:.c=.o}
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG)
-	$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG) -o $(NAME) 
-	@echo "$(YELLOW)${NAME} ✔️$(END)"
+$(NAME):	$(OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG)
+			$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG) -o $(NAME) 
+			@echo "$(YELLOW)${NAME} ✔️$(END)"
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(LIBFT):
 	@make -s -C $(LIBFT_DIR)
-	@make bonus -s -C $(LIBFT_DIR)
 
 $(PRINTF):
 	@make -s -C $(PRINTF_DIR)
@@ -58,6 +68,11 @@ $(PRINTF):
 $(MLX):
 	@make -s -C $(MLX_DIR)
 
+bonus: $(NAME_B)
+
+$(NAME_B): 	$(B_OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG)
+			$(CC) $(FLAGS) $(B_OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG) -o $(NAME_B) 
+			@echo "$(YELLOW)${NAME_B} ✔️$(END)"
 n:
 	norminette *c
 
@@ -66,11 +81,13 @@ v:
 
 clean:
 	${RM} ${OBJ}
+	${RM} ${B_OBJ}
 	@make -s -C $(LIBFT_DIR) clean
 	@make -s -C $(PRINTF_DIR) clean
 
 fclean: clean
 	${RM} ${NAME}
+	${RM} ${NAME_B}
 	@make -s -C $(LIBFT_DIR) fclean
 	@make -s -C $(PRINTF_DIR) fclean
 

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 16:13:49 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 21:44:45 by seozkan          ###   ########.fr       */
+/*   Created: 2023/03/08 21:38:27 by seozkan           #+#    #+#             */
+/*   Updated: 2023/03/08 22:39:05 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include "../lib/ft_printf/ft_printf.h"
 # include "../lib/libft/libft.h"
@@ -59,6 +59,7 @@ typedef struct s_game
 	void	*collect;
 	void	*player;
 	void	*exit;
+	void	*enemy;
 
 }			t_game;
 
@@ -73,6 +74,7 @@ void		ft_put_floor(t_game *game, int x, int y);
 void		ft_put_collect(t_game *game, int x, int y);
 void		ft_put_player(t_game *game);
 void		ft_put_exit(t_game *game, int x, int y);
+void		ft_put_enemy(t_game *game, int x, int y);
 
 void		ft_move_up(t_game *game);
 void		ft_move_down(t_game *game);
