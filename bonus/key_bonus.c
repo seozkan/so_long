@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:59:06 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 22:32:34 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/09 14:02:27 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_move_up(t_game *game)
 	game->map[game->y - 1][game->x] = 'P';
 	game->y--;
 	game->mov++;
-	ft_printf("Mov: %d\n", game->mov);
 }
 
 void	ft_move_down(t_game *game)
@@ -35,7 +34,6 @@ void	ft_move_down(t_game *game)
 	game->map[game->y + 1][game->x] = 'P';
 	game->y++;
 	game->mov++;
-	ft_printf("Mov: %d\n", game->mov);
 }
 
 void	ft_move_left(t_game *game)
@@ -48,7 +46,6 @@ void	ft_move_left(t_game *game)
 	game->map[game->y][game->x - 1] = 'P';
 	game->x--;
 	game->mov++;
-	ft_printf("Mov: %d\n", game->mov);
 }
 
 void	ft_move_right(t_game *game)
@@ -61,7 +58,6 @@ void	ft_move_right(t_game *game)
 	game->map[game->y][game->x + 1] = 'P';
 	game->x++;
 	game->mov++;
-	ft_printf("Mov: %d\n", game->mov);
 }
 
 int	ft_keyboard(int keyhook, t_game *game)

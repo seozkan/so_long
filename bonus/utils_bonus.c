@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:17:27 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 22:00:03 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/08 23:36:18 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,6 @@ void	init_assets(t_game *game)
 			"./assets/close.xpm", &game->pxl, &game->pxl);
 	game->enemy = mlx_xpm_file_to_image(game->mlx,
 			"./assets/enemy.xpm", &game->pxl, &game->pxl);
+	game->blank = mlx_xpm_file_to_image(game->mlx,
+			"./assets/blank.xpm", &game->pxl, &game->pxl);
 }

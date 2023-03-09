@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 21:38:27 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 22:39:05 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/09 17:40:22 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ typedef struct s_game
 	void	*player;
 	void	*exit;
 	void	*enemy;
-
+	void	*blank;
+	int		loop;
+	int		direction;
 }			t_game;
 
 void		check_map(t_game *game);
@@ -75,6 +77,7 @@ void		ft_put_collect(t_game *game, int x, int y);
 void		ft_put_player(t_game *game);
 void		ft_put_exit(t_game *game, int x, int y);
 void		ft_put_enemy(t_game *game, int x, int y);
+void		ft_put_blank(t_game *game, int x, int y);
 
 void		ft_move_up(t_game *game);
 void		ft_move_down(t_game *game);
@@ -98,4 +101,7 @@ void		ft_window(t_game *game);
 int			ft_close_window(t_game *game);
 int			ft_draw_map(t_game *game);
 void		init_assets(t_game *game);
+void		ft_mov_to_str(t_game *game, int x, int y);
+void		ft_put_select(t_game *game, int x, int y);
+void		ft_animated(t_game *game, int x, int y);
 #endif

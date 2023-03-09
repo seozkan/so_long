@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:13:35 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/08 22:35:36 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/09 18:02:30 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	close_img(t_game *game)
 		mlx_destroy_image(game->mlx, game->exit);
 	if (game->enemy)
 		mlx_destroy_image(game->mlx, game->enemy);
+	if (game->blank)
+		mlx_destroy_image(game->mlx, game->blank);
 }
 
 void	init_data(t_game *game)
@@ -39,6 +41,26 @@ void	init_data(t_game *game)
 	game->y = 0;
 	game->rows = 0;
 	game->columns = 0;
+	game->loop = 0;
+	game->direction = 1;
+}
+
+void	ft_animated(t_game *game, int x, int y)
+{
+	game->loop++;
+	if (game->map[y][x - 1] != '0' && game->map[y][x - 1] != 'P')
+		game->direction = 1;
+	else if (game->map[y][x + 1] != '0' && game->map[y][x + 1] != 'P')
+		game->direction = -1;
+	if (game->loop % 10 == 0)
+	{
+		if (game->map[y][x + game->direction] == 'P')
+			ft_close_window(game);
+		game->map[y][x] = '0';
+		game->map[y][x + game->direction] = 'X';
+	}
+	if (game->loop == 1000)
+		game->loop = 0;
 }
 
 int	main(int ac, char **av)

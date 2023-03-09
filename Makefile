@@ -74,7 +74,7 @@ $(NAME_B): 	$(B_OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG)
 			$(CC) $(FLAGS) $(B_OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG) -o $(NAME_B) 
 			@echo "$(YELLOW)${NAME_B} ✔️$(END)"
 n:
-	norminette *c
+	norminette src bonus includes
 
 v:
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./${NAME} maps/1.ber
