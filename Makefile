@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+         #
+#    By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/24 19:32:08 by seozkan           #+#    #+#              #
-#    Updated: 2023/02/24 19:32:08 by seozkan          ###   ########.fr        #
+#    Created: 2023/03/09 18:31:20 by seozkan           #+#    #+#              #
+#    Updated: 2023/03/09 18:31:20 by seozkan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

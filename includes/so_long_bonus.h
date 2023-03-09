@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 21:38:27 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 17:40:22 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/09 18:30:36 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

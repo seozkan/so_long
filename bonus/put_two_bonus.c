@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_two_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 21:55:53 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 13:25:45 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/09 18:30:56 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
