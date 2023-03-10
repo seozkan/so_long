@@ -6,11 +6,11 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:13:35 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/10 17:52:58 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/10 19:06:42 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "../inc/so_long_bonus.h"
 
 void	close_img(t_game *game)
 {

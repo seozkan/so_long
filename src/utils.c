@@ -6,11 +6,11 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:17:27 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 18:30:12 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/10 19:06:42 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../inc/so_long.h"
 
 void	ft_validate_file(char *map_path, t_game *game)
 {

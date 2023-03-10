@@ -6,11 +6,11 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:49:24 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 18:30:44 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/10 19:06:42 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long_bonus.h"
+#include "../inc/so_long_bonus.h"
 
 void	ft_validate_chars(t_game *game)
 {

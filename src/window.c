@@ -6,11 +6,11 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:18:37 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 18:30:15 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/10 19:06:42 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../inc/so_long.h"
 
 void	ft_window(t_game *game)
 {

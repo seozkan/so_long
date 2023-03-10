@@ -29,23 +29,8 @@ MLX_DIR = ./lib/mlx
 MLX = $(MLX_DIR)/libmlx_Linux.a
 MLX_ARG = -lm -lX11 -lXext
 
-
-SRC = 	src/so_long.c				\
-		src/utils.c					\
-		src/check.c					\
-		src/path.c					\
-		src/window.c				\
-		src/put.c					\
-		src/key.c
-
-B_SRC = bonus/so_long_bonus.c		\
-		bonus/utils_bonus.c			\
-		bonus/check_bonus.c			\
-		bonus/path_bonus.c			\
-		bonus/window_bonus.c		\
-		bonus/put_bonus.c			\
-		bonus/put_two_bonus.c		\
-		bonus/key_bonus.c
+SRC = $(wildcard src/*.c)
+B_SRC = $(wildcard bonus/*.c)
 
 OBJ = ${SRC:.c=.o}
 B_OBJ = ${B_SRC:.c=.o}
