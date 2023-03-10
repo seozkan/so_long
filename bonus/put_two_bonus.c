@@ -6,19 +6,19 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 21:55:53 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 18:30:56 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/10 17:52:58 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
 
-void	ft_put_enemy(t_game *game, int x, int y)
+void	ft_put_bomb(t_game *game, int x, int y)
 {
-	if (game->enemy)
-		mlx_destroy_image(game->mlx, game->enemy);
-	game->enemy = mlx_xpm_file_to_image(game->mlx, "./assets/enemy.xpm",
+	if (game->bomb)
+		mlx_destroy_image(game->mlx, game->bomb);
+	game->bomb = mlx_xpm_file_to_image(game->mlx, "./assets/bomb.xpm",
 			&game->pxl, &game->pxl);
-	mlx_put_image_to_window(game->mlx, game->mlx_win, game->enemy, game->pxl
+	mlx_put_image_to_window(game->mlx, game->mlx_win, game->bomb, game->pxl
 		* x, game->pxl * y);
 }
 

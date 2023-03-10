@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:13:35 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 18:30:58 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/10 17:52:58 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	close_img(t_game *game)
 		mlx_destroy_image(game->mlx, game->player);
 	if (game->exit)
 		mlx_destroy_image(game->mlx, game->exit);
-	if (game->enemy)
-		mlx_destroy_image(game->mlx, game->enemy);
+	if (game->bomb)
+		mlx_destroy_image(game->mlx, game->bomb);
 	if (game->blank)
 		mlx_destroy_image(game->mlx, game->blank);
 }

@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:18:37 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 18:31:09 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/10 17:52:58 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_put_select(t_game *game, int x, int y)
 	if (game->map[y][x] == 'X')
 	{
 		ft_animated(game, x, y);
-		ft_put_enemy(game, x, y);
+		ft_put_bomb(game, x, y);
 	}
 }
 

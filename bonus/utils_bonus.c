@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:17:27 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 18:31:03 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/10 17:52:58 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,8 @@ void	init_assets(t_game *game)
 			"./assets/collect.xpm", &game->pxl, &game->pxl);
 	game->exit = mlx_xpm_file_to_image(game->mlx,
 			"./assets/close.xpm", &game->pxl, &game->pxl);
-	game->enemy = mlx_xpm_file_to_image(game->mlx,
-			"./assets/enemy.xpm", &game->pxl, &game->pxl);
+	game->bomb = mlx_xpm_file_to_image(game->mlx,
+			"./assets/bomb.xpm", &game->pxl, &game->pxl);
 	game->blank = mlx_xpm_file_to_image(game->mlx,
 			"./assets/blank.xpm", &game->pxl, &game->pxl);
 }

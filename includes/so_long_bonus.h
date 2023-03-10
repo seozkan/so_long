@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 21:38:27 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 18:51:13 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/10 17:52:58 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct s_game
 	void	*collect;
 	void	*player;
 	void	*exit;
-	void	*enemy;
+	void	*bomb;
 	void	*blank;
 	int		loop;
 	int		direction;
@@ -72,7 +72,7 @@ void		ft_put_floor(t_game *game, int x, int y);
 void		ft_put_collect(t_game *game, int x, int y);
 void		ft_put_player(t_game *game);
 void		ft_put_exit(t_game *game, int x, int y);
-void		ft_put_enemy(t_game *game, int x, int y);
+void		ft_put_bomb(t_game *game, int x, int y);
 void		ft_put_blank(t_game *game, int x, int y);
 
 void		ft_move_up(t_game *game);
