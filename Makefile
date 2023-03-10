@@ -17,6 +17,7 @@ RM = @rm -f
 FLAGS = -Wall -Wextra -Werror -g3
 
 YELLOW = \033[33;49;1m
+CYAN = \033[33;36;1m
 END = \033[0;0m
 
 LIBFT_DIR = ./lib/libft
@@ -39,7 +40,8 @@ all: $(NAME)
 
 $(NAME):	$(OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG)
 			$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG) -o $(NAME) 
-			@echo "$(YELLOW)${NAME} ✔️$(END)"
+			@echo "$(YELLOW)${NAME} ✔️"
+			@echo "$(CYAN)Mandatory files compiled successfully ✔️$(END)"
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
@@ -58,6 +60,7 @@ bonus: $(NAME_B)
 $(NAME_B): 	$(B_OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG)
 			$(CC) $(FLAGS) $(B_OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG) -o $(NAME_B) 
 			@echo "$(YELLOW)${NAME_B} ✔️$(END)"
+			@echo "$(CYAN)Bonus files compiled successfully ✔️$(END)"
 n:
 	norminette src bonus includes
 
