@@ -64,9 +64,6 @@ $(NAME_B): 	$(B_OBJ) $(LIBFT) $(PRINTF) $(MLX)
 n:
 	norminette src bonus includes
 
-v:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./${NAME} maps/1.ber
-
 clean:
 	${RM} ${OBJ}
 	${RM} ${B_OBJ}
