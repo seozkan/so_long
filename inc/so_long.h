@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:13:49 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/11 13:46:06 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/11 14:58:49 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_game
 	int		p_count;
 	int		rows;
 	int		columns;
+	int		exit_posible;
 	void	*mlx;
 	void	*mlx_win;
 	int		x;

@@ -6,7 +6,7 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:13:35 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/10 19:06:42 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/11 14:58:55 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,16 @@ void	init_data(t_game *game)
 	game->y = 0;
 	game->rows = 0;
 	game->columns = 0;
+	game->exit_posible = 0;
+	game->exit = 0;
 	game->loop = 0;
 	game->direction = 1;
 }
 
 void	ft_animated(t_game *game, int x, int y)
 {
+	if ((game->map[y][x - 1] == '1' && game->map[y][x + 1] == '1'))
+		return ;
 	game->loop++;
 	if (game->map[y][x - 1] != '0' && game->map[y][x - 1] != 'P')
 		game->direction = 1;
