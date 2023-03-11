@@ -62,7 +62,7 @@ $(NAME_B): 	$(B_OBJ) $(LIBFT) $(PRINTF) $(MLX)
 			@echo "$(YELLOW)${NAME_B} ✔️$(END)"
 			@echo "$(CYAN)Bonus files compiled successfully ✔️$(END)"
 n:
-	norminette src bonus includes
+	norminette src bonus inc
 
 clean:
 	${RM} ${OBJ}
