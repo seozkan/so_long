@@ -27,8 +27,8 @@ PRINTF_DIR = ./lib/ft_printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
 MLX_DIR = ./lib/mlx
-MLX = $(MLX_DIR)/libmlx_Linux.a
-MLX_ARG = -lm -lX11 -lXext
+MLX = $(MLX_DIR)/libmlx.a
+MLX_ARG = -framework OpenGl -framework AppKit
 
 SRC = $(wildcard src/*.c)
 B_SRC = $(wildcard bonus/*.c)
@@ -38,7 +38,7 @@ B_OBJ = ${B_SRC:.c=.o}
 
 all: $(NAME)
 
-$(NAME):	$(OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG)
+$(NAME):	$(OBJ) $(LIBFT) $(PRINTF) $(MLX)
 			$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG) -o $(NAME) 
 			@echo "$(YELLOW)${NAME} ✔️"
 			@echo "$(CYAN)Mandatory files compiled successfully ✔️$(END)"
@@ -57,7 +57,7 @@ $(MLX):
 
 bonus: $(NAME_B)
 
-$(NAME_B): 	$(B_OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG)
+$(NAME_B): 	$(B_OBJ) $(LIBFT) $(PRINTF) $(MLX)
 			$(CC) $(FLAGS) $(B_OBJ) $(LIBFT) $(PRINTF) $(MLX) $(MLX_ARG) -o $(NAME_B) 
 			@echo "$(YELLOW)${NAME_B} ✔️$(END)"
 			@echo "$(CYAN)Bonus files compiled successfully ✔️$(END)"

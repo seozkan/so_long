@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
+/*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:13:49 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/09 18:54:19 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/11 13:46:06 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include "../lib/mlx/mlx.h"
 # include <fcntl.h>
 
-# define K_ESC 65307
-# define K_UP 119
-# define K_DOWN 115
-# define K_LEFT 97
-# define K_RIGHT 100
+# define K_ESC 53
+# define K_UP 13
+# define K_DOWN 1
+# define K_LEFT 0
+# define K_RIGHT 2
 
 # define E_MALLOC "Failed to allocate memory!"
 # define E_ARG "The program must be run with a map argument!"

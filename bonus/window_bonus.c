@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
+/*   By: seozkan <seozkan@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 23:18:37 by seozkan           #+#    #+#             */
-/*   Updated: 2023/03/10 19:06:42 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/03/11 13:47:30 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	ft_close_window(t_game *game)
 	ft_free_map_2d(game->map);
 	close_img(game);
 	mlx_destroy_window(game->mlx, game->mlx_win);
-	mlx_destroy_display(game->mlx);
 	free(game->mlx);
 	free(game);
 	exit(1);
