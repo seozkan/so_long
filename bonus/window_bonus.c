@@ -32,7 +32,6 @@ int	ft_close_window(t_game *game)
 	ft_free_map_2d(game->map);
 	close_img(game);
 	mlx_destroy_window(game->mlx, game->mlx_win);
-	free(game->mlx);
 	free(game);
 	exit(1);
 	return (0);
