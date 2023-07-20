@@ -26,9 +26,16 @@ LIBFT = $(LIBFT_DIR)/libft.a
 PRINTF_DIR = ./lib/ft_printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
-MLX_DIR = ./lib/mlx
-MLX = $(MLX_DIR)/libmlx.a
-MLX_ARG = -framework OpenGl -framework AppKit
+OS := $(shell uname)
+ifeq ($(OS),Linux)
+	MLX_DIR = ./lib/mlx-linux
+	MLX = $(MLX_DIR)/libmlx_Linux.a
+	MLX_ARG = -lm -lX11 -lXext
+else
+	MLX_DIR = ./lib/mlx
+	MLX = $(MLX_DIR)/libmlx.a
+	MLX_ARG = -framework OpenGl -framework AppKit
+endif
 
 SRC = $(wildcard src/*.c)
 B_SRC = $(wildcard bonus/*.c)
